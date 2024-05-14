@@ -25,10 +25,10 @@ public class Principal {
                     System.out.println("Insira o salário do funcionário.");
                     double salario = in.nextDouble();
 
-                    Empregado empregado = new Empregado(nome, idade, salario);
+                    new Empregado(nome, idade, salario);
                     break;
                 case 2:
-                    empregado.promover();
+                    break;
             }
 
         } while (opcao != 7);

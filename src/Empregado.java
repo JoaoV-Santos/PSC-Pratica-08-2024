@@ -22,8 +22,29 @@ public class Empregado {
         salario *= 1 + (percentualAumento / 100);
     }
 
-    public void demitir (int motivo) {
-
+    public String demitir (int motivo) {
+        switch (motivo) {
+            case 1: // Justa Causa
+                return "A pessoa colaboradora precisará cumprir aviso prévio.";
+                break;
+            case 2: // Decisão do Empregador
+                double multa = this.salario * 0.40;
+                return "A pessoa colaboradora foi demitida por decisao do empregador. o valor da multa é de R$ " + multa;
+                break;
+            default: // Aposentadoria
+                double salarioAposentadoria;
+                if (this.salario < 2000) {
+                    salarioAposentadoria = 1500;
+                } else if (this.salario < 3000) {
+                    salarioAposentadoria = 2500;
+                } else if (this.salario < 4000) {
+                    salarioAposentadoria = 3500;
+                }
+                else
+                    salarioAposentadoria = 4000;
+                return "O salário de aposentadoria será" + salarioAposentadoria;
+                break;
+        }
     }
 
     public void fazerAniversario() {
