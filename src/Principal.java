@@ -15,6 +15,7 @@ public class Principal {
                     "7.Sair\n");
 
             opcao = in.nextInt();
+            in.nextLine();
 
             switch (opcao) {
                 case 1:
@@ -25,10 +26,30 @@ public class Principal {
                     System.out.println("Insira o salário do funcionário.");
                     double salario = in.nextDouble();
 
-                    new Empregado(nome, idade, salario);
+                    Empregado empregado = new Empregado(nome, idade, salario);
                     break;
                 case 2:
+                    empregado.promover();
                     break;
+                case 3:
+                    System.out.println("Informe o percentual de aumento do salário:");
+                    int percentual = in.nextInt();
+                    empregado.aumentarSalario(percentual);
+                    break;
+                case 4:
+                    System.out.println("Informe o motivo da demissão:");
+                    int motivo = in.nextInt();
+                    empregado.demitir(motivo);
+                    break;
+                case 5:
+                    empregado.fazerAniversario();
+                    break;
+                case 6:
+                    empregado.toString();
+                    break;
+                case 7:
+                    break;
+
             }
 
         } while (opcao != 7);

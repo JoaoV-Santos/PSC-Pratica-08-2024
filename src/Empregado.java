@@ -26,11 +26,9 @@ public class Empregado {
         switch (motivo) {
             case 1: // Justa Causa
                 return "A pessoa colaboradora precisará cumprir aviso prévio.";
-                break;
             case 2: // Decisão do Empregador
                 double multa = this.salario * 0.40;
                 return "A pessoa colaboradora foi demitida por decisao do empregador. o valor da multa é de R$ " + multa;
-                break;
             default: // Aposentadoria
                 double salarioAposentadoria;
                 if (this.salario < 2000) {
@@ -43,7 +41,6 @@ public class Empregado {
                 else
                     salarioAposentadoria = 4000;
                 return "O salário de aposentadoria será" + salarioAposentadoria;
-                break;
         }
     }
 
